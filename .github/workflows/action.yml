@@ -1,16 +1,29 @@
-name: first
-on:
-   push:
-     branches:
-       - master
+name: challenge session
+on: 
+  push:
+    branches:
+     - master
+
 jobs:
-  job1: 
-     name: First Job1
+  Britania_test:
+    runs-on: ubuntu-latest
+    steps:
+     - name: date
+       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+  Camry_test:
+     runs-on: windows-latest
+     steps:
+      - name: date2
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+  Cut_test: 
+     runs-on: macos-latest
+     steps:     
+       - name: date3
+         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+  Mirchi_test:
+     needs: [Britania_test, Camry_test, Cut_test]  
      runs-on: ubuntu-latest
      steps:
-     - name: Step one
-       uses: actions/checkout@v2
-     - name: Step two
-       run: env | sort
-       
-  
+       - id: date4
+         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+     
