@@ -22,7 +22,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1.2.3
 
       - name: Configure AWS secret 
-        env:
+        with:
           TMS_USER: ${{ secrets.AWS_REGION }}
             
         
