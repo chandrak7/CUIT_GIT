@@ -23,7 +23,7 @@ jobs:
 
       - name: Configure AWS secret 
         env:
-          TMS_USER: ${{secrets.AWS_REGION}}
+          TMS_USER: ${{ secrets.AWS_REGION }}
             
         
  
