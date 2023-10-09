@@ -17,5 +17,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
             java-version: '9.0.4'
+
+      - name: Install Chrome
+        uses: logikal-io/install-chrome@v1.0.1
+            
             
  
