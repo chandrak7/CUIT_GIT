@@ -5,25 +5,18 @@ on:
      - master
 
 jobs:
-  Britania_test:
-    runs-on: ubuntu-latest
-    steps:
-     - name: date
-       run: date   
-  Camry_test:
-     runs-on: windows-latest
-     steps:
-      - name: date2
-        run: date
-  Cut_test: 
-     runs-on: macos-latest
-     steps:     
-       - name: date3
-         run: date
-  Mirchi_test:
-     needs: [Britania_test, Camry_test, Cut_test]  
-     runs-on: ubuntu-latest
-     steps:
-       - id: date4
-         run: date
-     
+    build:
+
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Check out tomacat-users.xml
+        uses: actions/checkout@v2
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1
+        with:
+            java-version: '9.0.4'
+            
+            
+ 
