@@ -21,8 +21,9 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1.2.3
 
-      - name: Configure AWS secret 
-        with:
+      - name: "Configure AWS Credentials"
+        uses: aws-actions/configure-aws-credentials@v4
+        with:   
           TMS_USER: ${{ secrets.AWS_REGION }}
             
         
