@@ -19,7 +19,7 @@ jobs:
             java-version: '9.0.4'
 
       - name: Install Chrome
-        uses: logikal-io/install-chrome@v1.0.1
+        run: choco install googlechrome -y
             
             
  
